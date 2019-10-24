@@ -13,6 +13,6 @@ function catClicks() {
     console.log(thumbnailAlt);
     $('.hero img').attr('src', thumbnailSrc).attr('alt', thumbnailAlt);
   });
-};
+}; 
 
 $(catClicks);
