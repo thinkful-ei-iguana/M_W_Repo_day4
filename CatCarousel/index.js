@@ -7,12 +7,12 @@
 // };
 
 function catClicks() {
-    $('.thumbnail').on('click', e => {
-        let thumbnailSrc = $(e.currentTarget).find('img').attr('src');
-        let thumbnailAlt = $(e.currentTarget).find('img').attr('alt');
-        console.log(thumbnailAlt);
-      $('.hero img').attr('src', thumbnailSrc).attr('alt', thumbnailAlt);
-    });
-   };
+  $('.thumbnail').on('click', e => {
+    let thumbnailSrc = $(e.currentTarget).find('img').attr('src');
+    let thumbnailAlt = $(e.currentTarget).find('img').attr('alt');
+    console.log(thumbnailAlt);
+    $('.hero img').attr('src', thumbnailSrc).attr('alt', thumbnailAlt);
+  });
+};
 
-   $(catClicks);
+$(catClicks);
