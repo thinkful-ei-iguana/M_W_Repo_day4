@@ -5,19 +5,19 @@ console.log('hi hi hi');
 
 function main() {
 
-	function registerSubmitListener() {
+  function registerSubmitListener() {
 
-		$('#js-shopping-list-form').on('submit', function(e) {
-			e.preventDefault();
+    $('#js-shopping-list-form').on('submit', function(e) {
+      e.preventDefault();
 
-			let addItem = $('#shopping-list-entry').val();
-			console.log("addItem ran?", addItem);
+      let addItem = $('#shopping-list-entry').val();
+      console.log("addItem ran?", addItem);
 
 
-			if (addItem) {
+      if (addItem) {
 
-				$('.shopping-list').append(
-					`<li>
+        $('.shopping-list').append(
+          `<li>
                         <span class="shopping-item">${addItem}</span>
                         <div class="shopping-item-controls">
                             <button class="shopping-item-toggle">
@@ -28,34 +28,24 @@ function main() {
                             </button>
                         </div>
                     </li>`
-				);
+        );
 
-			};
+      };
 
-		});
-    }
-    registerSubmitListener();
+    });
+  }
+  registerSubmitListener();
 
 
-	$('.shopping-list').on('click','.shopping-item-delete', function(e) {
-		$(this).closest('li').remove();
-	});
+  $('.shopping-list').on('click','.shopping-item-delete', function(e) {
+    $(this).closest('li').remove();
+  });
 
-	$('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
-		$(this).closest('span').find('.shopping-item').toggleClass('shopping-item__checked');
-	});
+  $('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
+    $(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+  });
 
 }
 
 $((main));
 
-// need to remove a list item when selecting the delete button
-
-let remove = $('.shopping-list').on('click','.shopping-item-delete', function(e) {
-	$(this).closest('li').remove();
-});
-let strikeThru = $('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
-	$(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
-});
-
-//   toggleClass('shopping-item__checked')
